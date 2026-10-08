@@ -1,0 +1,7 @@
+.env
+chat_history.json
+memory.json
+users.db
+__pycache__
+*.pyc
+.vscode/
