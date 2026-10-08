@@ -422,7 +422,14 @@ If you did not request a password reset, please ignore this email.
 My AI Assistant
 """
 
-    mail.send(msg)
+    try:
+      mail.send(msg)
+      print("OTP EMAIL SENT SUCCESSFULLY")
+    except Exception as e:
+      print("OTP EMAIL ERROR:", e)
+      return jsonify({
+        "error": "Unable to send OTP."
+       }), 500
 
     return jsonify({
         "message":
